@@ -34,7 +34,7 @@ setup the KUBECONFIG variable to be able to connect to the K8s environement.
 ## Check pods deployment
 Check that all pods are in Running status before to execute next commands:
 ```
-kubectl get pod -A                             laptop390-ma-us-1.home: Thu Jan  5 16:29:56 2023
+kubectl get pod -A                                               Thu Jan  5 16:29:56 2023
 
 NAMESPACE     NAME                                       READY   STATUS    RESTARTS   AGE
 kube-system   calico-kube-controllers-6799f5f4b4-trhk5   1/1     Running   0          16m
@@ -129,7 +129,7 @@ Open a new window and execute these files:
 ./06_show_status.sh
 ```
 ```
-kubectl-cnpg status cluster-example                                                   laptop390-ma-us-1.home: Thu Jan  5 18:07:39 2023
+kubectl-cnpg status cluster-example                                                   Thu Jan  5 18:07:39 2023
 
 Cluster Summary
 Name:               cluster-example

@@ -32,7 +32,7 @@ setup the KUBECONFIG variable to be able to connect to the K8s environement.
 . ./02_setup_env.sh
 ```
 ## Check pods deployment
-Check that all pods are in status Running before to execute next commands:
+Check that all pods are in Running status before to execute next commands:
 ```
 kubectl get pod -A                             laptop390-ma-us-1.home: Thu Jan  5 16:29:56 2023
 
@@ -57,7 +57,7 @@ kube-system   metrics-server-77b474bd7b-tmvrd            1/1     Running   0    
 ./04_deploy_longhorn.sh
 ```
 ## Check Longhorn deployment
-After some minutes, verify that Longhorn has been sucessfully deployed. All pods must be in status *running*.
+After some minutes, verify that Longhorn has been sucessfully deployed. All pods must be in *running* status.
 ```
 ./04_check_deployment_longhhorn.sh
 ```
@@ -127,6 +127,46 @@ Open a new window and execute these files:
 ```
 ./setup_env.sh
 ./06_show_status.sh
+```
+```
+kubectl-cnpg status cluster-example                                                   laptop390-ma-us-1.home: Thu Jan  5 18:07:39 2023
+
+Cluster Summary
+Name:               cluster-example
+Namespace:          default
+System ID:          7185202854958276629
+PostgreSQL Image:   ghcr.io/cloudnative-pg/postgresql:14.2
+Primary instance:   cluster-example-1
+Status:             Cluster in healthy state
+Instances:          3
+Ready instances:    3
+Current Write LSN:  0/6000060 (Timeline: 1 - WAL File: 000000010000000000000006)
+
+Certificates Status
+Certificate Name             Expiration Date                Days Left Until Expiration
+----------------             ---------------                --------------------------
+cluster-example-ca           2023-04-05 16:10:59 +0000 UTC  89.96
+cluster-example-replication  2023-04-05 16:10:59 +0000 UTC  89.96
+cluster-example-server       2023-04-05 16:10:59 +0000 UTC  89.96
+
+Continuous Backup status
+Not configured
+
+Streaming Replication status
+Name               Sent LSN   Write LSN  Flush LSN  Replay LSN  Write Lag  Flush Lag  Replay Lag  State      Sync State  Sync Priority
+----               --------   ---------  ---------  ----------  ---------  ---------  ----------  -----      ----------  -------------
+cluster-example-2  0/6000060  0/6000060  0/6000060  0/6000060   00:00:00   00:00:00   00:00:00    streaming  quorum      1
+cluster-example-3  0/6000060  0/6000060  0/6000060  0/6000060   00:00:00   00:00:00   00:00:00    streaming  quorum      1
+
+Unmanaged Replication Slot Status
+No unmanaged replication slots found
+
+Instances status
+Name               Database Size  Current LSN  Replication role  Status  QoS        Manager Version  Node
+----               -------------  -----------  ----------------  ------  ---        ---------------  ----
+cluster-example-1  33 MB          0/6000060    Primary           OK      Burstable  1.18.1           pool-7b018-pbecg
+cluster-example-2  33 MB          0/6000060    Standby (sync)    OK      Burstable  1.18.1           pool-7b018-lbqnt
+cluster-example-3  33 MB          0/6000060    Standby (sync)    OK      Burstable  1.18.1           pool-7b018-xcmmj
 ```
 Go back to the previous window and execute:
 ```

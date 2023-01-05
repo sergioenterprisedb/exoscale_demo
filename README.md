@@ -178,6 +178,8 @@ In my case, region is ch-gva-2. More info, [here](https://community.exoscale.com
 ```
 endpointURL: "http://sos-ch-gva-2.exo.io"
 ```
+Execute next file:
+```
 ./09_upgrade.sh
 ```
 

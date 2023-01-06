@@ -111,6 +111,7 @@ longhorn-system   longhorn-manager-zffbf                         1/1     Running
 longhorn-system   longhorn-ui-86b56b95c8-m4fss                   1/1     Running   0          13m
 ```
 # CloudNativePG Demo
+![](./images/cloudnativepg_usecase1.gif)
 Execute commands in the correct order:
 ```
 ./01_install_plugin.sh
@@ -178,19 +179,16 @@ In my case, region is ch-gva-2. More info, [here](https://community.exoscale.com
 ```
 endpointURL: "http://sos-ch-gva-2.exo.io"
 ```
-Execute next file:
+Execute next files:
 ```
 ./09_upgrade.sh
-```
-
-```
 ./10_backup_cluster.sh
 ./11_backup_describe.sh
 ./12_restore_cluster.sh
 ./13_failover.sh
 ```
 # Major upgrade
-Major upgrade feature has been introduced in 1.16 version.
+Major upgrade feature has been introduced in CloudNativePG 1.16 version.
 In this demo I show you how to upgrade your cluster from PosgreSQL v13 to v14 or v15.
 ```
 ./20_create_cluster_v13.sh

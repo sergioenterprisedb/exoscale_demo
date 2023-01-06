@@ -111,7 +111,7 @@ longhorn-system   longhorn-manager-zffbf                         1/1     Running
 longhorn-system   longhorn-ui-86b56b95c8-m4fss                   1/1     Running   0          13m
 ```
 # CloudNativePG Demo
-![](./images/cloudnativepg_usecase1.gif)
+![](./images/cloudnativepg-switchover.gif)
 Execute commands in the correct order:
 ```
 ./01_install_plugin.sh
